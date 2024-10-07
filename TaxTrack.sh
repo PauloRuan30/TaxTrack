@@ -1,70 +1,92 @@
 #!/bin/bash
 
-mkdir -p TaxTrack/backend/cmd/server
-touch TaxTrack/backend/cmd/server/main.go
+mkdir -p sped-intelligence/backend/app/api/v1/endpoints
+touch sped-intelligence/backend/app/api/v1/endpoints/upload.py
+touch sped-intelligence/backend/app/api/v1/endpoints/other_endpoints.py
+touch sped-intelligence/backend/app/api/v1/__init__.py
+touch sped-intelligence/backend/app/api/__init__.py
 
-mkdir -p TaxTrack/backend/internal/api/handlers
-touch TaxTrack/backend/internal/api/handlers/upload.go
-touch TaxTrack/backend/internal/api/router.go
+mkdir -p sped-intelligence/backend/app/core
+touch sped-intelligence/backend/app/core/config.py
+touch sped-intelligence/backend/app/core/security.py
+touch sped-intelligence/backend/app/core/__init__.py
 
-mkdir -p TaxTrack/backend/internal/services
-touch TaxTrack/backend/internal/services/processor.go
+mkdir -p sped-intelligence/backend/app/db
+touch sped-intelligence/backend/app/db/base.py
+touch sped-intelligence/backend/app/db/session.py
+touch sped-intelligence/backend/app/db/__init__.py
 
-mkdir -p TaxTrack/backend/internal/models
-touch TaxTrack/backend/internal/models/file.go
+mkdir -p sped-intelligence/backend/app/models
+touch sped-intelligence/backend/app/models/file.py
+touch sped-intelligence/backend/app/models/__init__.py
 
-mkdir -p TaxTrack/backend/internal/database
-touch TaxTrack/backend/internal/database/postgres.go
+mkdir -p sped-intelligence/backend/app/schemas
+touch sped-intelligence/backend/app/schemas/file.py
+touch sped-intelligence/backend/app/schemas/__init__.py
 
-mkdir -p TaxTrack/backend/internal/utils
-touch TaxTrack/backend/internal/utils/logger.go
+mkdir -p sped-intelligence/backend/app/services
+touch sped-intelligence/backend/app/services/file_processing.py
+touch sped-intelligence/backend/app/services/__init__.py
 
-mkdir -p TaxTrack/backend/configs
-touch TaxTrack/backend/configs/config.yaml
+mkdir -p sped-intelligence/backend/app/utils
+touch sped-intelligence/backend/app/utils/helpers.py
+touch sped-intelligence/backend/app/utils/__init__.py
 
-mkdir -p TaxTrack/backend/migrations
-touch TaxTrack/backend/migrations/20240427_create_tables.up.sql
+touch sped-intelligence/backend/app/main.py
+touch sped-intelligence/backend/app/__init__.py
 
-mkdir -p TaxTrack/backend/scripts
-touch TaxTrack/backend/scripts/setup.sh
+mkdir -p sped-intelligence/backend/tests/api/v1
+touch sped-intelligence/backend/tests/api/v1/test_upload.py
+touch sped-intelligence/backend/tests/api/__init__.py
 
-touch TaxTrack/backend/Dockerfile
-touch TaxTrack/backend/go.mod
-touch TaxTrack/backend/go.sum
+mkdir -p sped-intelligence/backend/tests/unit
+touch sped-intelligence/backend/tests/unit/test_helpers.py
+touch sped-intelligence/backend/tests/__init__.py
 
-mkdir -p TaxTrack/frontend/public
-touch TaxTrack/frontend/public/index.html
+mkdir -p sped-intelligence/backend/alembic/versions
+touch sped-intelligence/backend/alembic/env.py
+touch sped-intelligence/backend/alembic/script.py.mako
+touch sped-intelligence/backend/alembic/alembic.ini
 
-mkdir -p TaxTrack/frontend/src/assets
-mkdir -p TaxTrack/frontend/src/components
-touch TaxTrack/frontend/src/components/FileUpload.jsx
+touch sped-intelligence/backend/.env
+touch sped-intelligence/backend/.gitignore
+touch sped-intelligence/backend/Dockerfile
+touch sped-intelligence/backend/requirements.txt
+touch sped-intelligence/backend/README.md
 
-mkdir -p TaxTrack/frontend/src/pages
-touch TaxTrack/frontend/src/pages/Home.jsx
+mkdir -p sped-intelligence/frontend/public
+touch sped-intelligence/frontend/public/index.html
+touch sped-intelligence/frontend/public/favicon.ico
 
-mkdir -p TaxTrack/frontend/src/services
-touch TaxTrack/frontend/src/services/api.js
+mkdir -p sped-intelligence/frontend/src/assets
+touch sped-intelligence/frontend/src/assets/logo.png
 
-touch TaxTrack/frontend/src/App.jsx
-touch TaxTrack/frontend/src/index.css
-touch TaxTrack/frontend/src/index.js
+mkdir -p sped-intelligence/frontend/src/components
+touch sped-intelligence/frontend/src/components/FileUpload.jsx
+touch sped-intelligence/frontend/src/components/DataTable.jsx
+touch sped-intelligence/frontend/src/components/Header.jsx
 
-touch TaxTrack/frontend/tailwind.config.js
-touch TaxTrack/frontend/postcss.config.js
-touch TaxTrack/frontend/Dockerfile
-touch TaxTrack/frontend/package.json
-touch TaxTrack/frontend/package-lock.json
+mkdir -p sped-intelligence/frontend/src/pages
+touch sped-intelligence/frontend/src/pages/Home.jsx
+touch sped-intelligence/frontend/src/pages/Upload.jsx
 
-mkdir -p TaxTrack/database/data
-mkdir -p TaxTrack/database/migrations
-touch TaxTrack/database/Dockerfile
-touch TaxTrack/database/init.sql
+mkdir -p sped-intelligence/frontend/src/services
+touch sped-intelligence/frontend/src/services/api.js
 
-touch TaxTrack/docker-compose.yml
-touch TaxTrack/.gitignore
-touch TaxTrack/README.md
+mkdir -p sped-intelligence/frontend/src/styles
+touch sped-intelligence/frontend/src/styles/globals.css
+touch sped-intelligence/frontend/src/styles/tailwind.css
 
-mkdir -p TaxTrack/docs
-touch TaxTrack/docs/architecture.md
-touch TaxTrack/docs/api_documentation.md
-touch TaxTrack/docs/setup_guide.md
+touch sped-intelligence/frontend/src/App.jsx
+touch sped-intelligence/frontend/src/index.jsx
+touch sped-intelligence/frontend/src/setupTests.js
+
+touch sped-intelligence/frontend/.gitignore
+touch sped-intelligence/frontend/Dockerfile
+touch sped-intelligence/frontend/package.json
+touch sped-intelligence/frontend/postcss.config.js
+touch sped-intelligence/frontend/tailwind.config.js
+touch sped-intelligence/frontend/README.md
+
+touch sped-intelligence/docker-compose.yml
+touch sped-intelligence/README.md
