@@ -1,43 +1,46 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-// Component for file type selection
+// SVG Header Component
+const SVGHeader = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="#8FC1E3">
+    <path d="M0 1v99c134.3 0 153.7-99 296-99H0Z" opacity=".5"></path>
+    <path d="M1000 4v86C833.3 90 833.3 3.6 666.7 3.6S500 90 333.3 90 166.7 4 0 4h1000Z" opacity=".5"></path>
+    <path d="M617 1v86C372 119 384 1 196 1h421Z" opacity=".5"></path>
+    <path d="M1000 0H0v52C62.5 28 125 4 250 4c250 0 250 96 500 96 125 0 187.5-24 250-48V0Z"></path>
+  </svg>
+);
+
+// Component for selecting file types
 const FileTypeSelection = () => (
-  <div className="flex justify-center gap-3 my-6">
-    <div className="flex items-center px-6 py-3">
-      <input
-        type="checkbox"
-        className="border-2 border-gray-900 rounded-md w-6 h-6 mr-3"
-      />
-      <span className="text-center text-gray-900 text-2xl font-medium">
-        EFD ICMS
-      </span>
-    </div>
-    <div className="flex items-center px-6 py-3">
-      <input
-        type="checkbox"
-        className="bg-[#34808c] border-2 border-[#34808c] w-6 h-6 rounded-md mr-3"
-      />
-      <span className="text-center text-gray-900 text-2xl font-medium">
-        EFD Contribuições
-      </span>
-    </div>
+  <div className="flex justify-center gap-6 my-6">
+    {["EFD ICMS", "EFD Contribuições"].map((label, index) => (
+      <div key={index} className="flex items-center px-4 py-2">
+        <input
+          type="checkbox"
+          className="w-6 h-6 mr-3 rounded-md border-2"
+          style={{ borderColor: index === 1 ? "#34808c" : "#333" }}
+        />
+        <span className="text-center text-2xl font-medium text-gray-900">
+          {label}
+        </span>
+      </div>
+    ))}
   </div>
 );
 
-// Component for file upload area
+// Component for the drag-and-drop file upload area
 const FileUploadArea = ({ onFileSelect, handleDrop, handleDragOver }) => (
   <div
-    className="my-10 mx-32 max-w-auto space-x-10 bg-[#5085A5] backdrop-filter backdrop-blur-2xl bg-opacity-10 rounded-2xl border-2 border-[#5085a5]/70 p-6 relative"
+    className="my-10 mx-8 md:mx-32 p-6 max-w-full bg-blue-500/10 backdrop-blur-xl rounded-2xl border-2 border-blue-500/70 relative"
     onDrop={handleDrop}
     onDragOver={handleDragOver}
   >
-    <div className="bg-[#8fc1e3]/95 rounded-2xl border-4 border-dashed border-gray-50 px-8 py-16 text-center flex items-center justify-center">
-      <div className="flex flex-col items-center">
-        <p className="text-gray-900 text-3xl font-semibold">Solte seus arquivos aqui ou</p>
-      </div>
-      <label className="bg-white text-[#17a2b8] px-6 py-4 rounded-lg flex items-center cursor-pointer mx-4">
-        <i className="fas fa-file-upload text-xl" />
+    <div className="bg-blue-300/95 rounded-2xl border-4 border-dashed border-gray-50 p-8 md:p-16 text-center flex flex-col items-center">
+      <p className="text-gray-900 text-2xl md:text-3xl font-semibold mb-4">
+        Solte seus arquivos aqui ou
+      </p>
+      <label className="bg-white text-cyan-600 px-6 py-3 rounded-lg cursor-pointer">
         Escolher os Arquivos
         <input type="file" multiple className="hidden" onChange={onFileSelect} />
       </label>
@@ -45,11 +48,10 @@ const FileUploadArea = ({ onFileSelect, handleDrop, handleDragOver }) => (
   </div>
 );
 
-
-// Component to show file details
+// Component to display file details after upload
 const FileDetails = ({ fileDetails }) =>
   fileDetails.length > 0 && (
-    <div className="mt-6">
+    <div className="mt-6 px-4">
       <h2 className="text-xl font-semibold mb-2">Detalhes dos Arquivos</h2>
       <ul className="list-disc list-inside">
         {fileDetails.map((file, index) => (
@@ -61,16 +63,16 @@ const FileDetails = ({ fileDetails }) =>
     </div>
   );
 
-// Component to show converted data table
+// Component for converted data table display
 const ConvertedDataTable = ({ tableData }) =>
   tableData.length > 0 && (
-    <div className="mt-6 overflow-x-auto">
+    <div className="mt-6 overflow-x-auto px-4">
       <h2 className="text-xl font-semibold mb-2">Dados Convertidos</h2>
       <table className="min-w-full bg-white">
         <thead>
           <tr>
             {Object.keys(tableData[0]).map((key, index) => (
-              <th key={index} className="py-2 px-4 border-b">
+              <th key={index} className="py-2 px-4 border-b text-left">
                 {key}
               </th>
             ))}
@@ -91,10 +93,10 @@ const ConvertedDataTable = ({ tableData }) =>
     </div>
   );
 
-// Component for full-width description and instructions
+// Component for descriptive information section
 const FullWidthDescription = () => (
-  <div className="w-full bg-[#34808c] text-white py-4 mt-16">
-    <div className="flex flex-col md:flex-row justify-around container mx-auto px-4">
+  <div className="w-full bg-cyan-600 text-white py-8 mt-16">
+    <div className="container mx-auto px-4 flex flex-col md:flex-row justify-around">
       <div className="w-full md:w-1/2 pr-4 mb-8 md:mb-0">
         <h2 className="font-bold mb-2">Descrição</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
@@ -111,11 +113,13 @@ const FullWidthDescription = () => (
   </div>
 );
 
-const ImportArchives = () => {
+// Main component to handle file upload, details, and data display
+const Home_page = () => {
   const [selectedFiles, setSelectedFiles] = useState([]);
   const [tableData, setTableData] = useState([]);
   const [fileDetails, setFileDetails] = useState([]);
 
+  // Handle file drag-and-drop upload
   const handleDrop = (event) => {
     event.preventDefault();
     const files = event.dataTransfer.files;
@@ -133,6 +137,7 @@ const ImportArchives = () => {
     handleUpload(files);
   };
 
+  // Upload files and fetch data from the backend
   const handleUpload = async (files) => {
     if (files.length === 0) {
       alert("Por favor, selecione pelo menos um arquivo.");
@@ -145,15 +150,9 @@ const ImportArchives = () => {
     }
 
     try {
-      const response = await axios.post(
-        "http://localhost:8000/upload/",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      const response = await axios.post("http://localhost:8000/upload/", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
 
       setFileDetails(response.data.files);
       setTableData(response.data.data);
@@ -164,40 +163,35 @@ const ImportArchives = () => {
   };
 
   return (
-    <div className="w-full min-h-screen mx-auto bg-white relative font-['Poppins']">
-  {/* SVG Header */}
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="#8FC1E3">
-    <path d="M0 1v99c134.3 0 153.7-99 296-99H0Z" opacity=".5"></path>
-    <path d="M1000 4v86C833.3 90 833.3 3.6 666.7 3.6S500 90 333.3 90 166.7 4 0 4h1000Z" opacity=".5"></path>
-    <path d="M617 1v86C372 119 384 1 196 1h421Z" opacity=".5"></path>
-    <path d="M1000 0H0v52C62.5 28 125 4 250 4c250 0 250 96 500 96 125 0 187.5-24 250-48V0Z"></path>
-  </svg>
+    <div className="w-full min-h-screen bg-white font-['Poppins'] relative">
+      {/* SVG Header */}
+      <SVGHeader />
 
-  <div className="container mx-auto px-4 flex-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-    {/* Header Text */}
-    <h1 className="text-black text-3xl font-bold text-center">
-      Importe aqui seus arquivos para serem convertidos
-    </h1>
-  </div>
-
-
-        {/* File Type Selection */}
-        <FileTypeSelection />
-
-        {/* File Upload Area */}
-        <FileUploadArea
-          onFileSelect={handleFileSelect}
-          handleDrop={handleDrop}
-          handleDragOver={handleDragOver}
-        />
-
-        {/* File Details and Data Table */}
-        <FileDetails fileDetails={fileDetails} />
-        <ConvertedDataTable tableData={tableData} />
-
-        {/* Full-width Description and Instructions */}
-        <FullWidthDescription />
+      {/* Header Text */}
+      <div className="text-center py-6 px-4">
+        <h1 className="text-black text-2xl md:text-3xl font-bold">
+          Importe aqui seus arquivos para serem convertidos
+        </h1>
       </div>
+
+      {/* File Type Selection */}
+      <FileTypeSelection />
+
+      {/* File Upload Area */}
+      <FileUploadArea
+        onFileSelect={handleFileSelect}
+        handleDrop={handleDrop}
+        handleDragOver={handleDragOver}
+      />
+
+      {/* File Details and Data Table */}
+      <FileDetails fileDetails={fileDetails} />
+      <ConvertedDataTable tableData={tableData} />
+
+      {/* Full-width Description and Instructions */}
+      <FullWidthDescription />
+    </div>
   );
-}
-export default ImportArchives;
+};
+
+export default Home_page;

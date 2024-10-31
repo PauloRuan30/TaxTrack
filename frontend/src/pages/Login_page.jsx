@@ -4,9 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = useState("");
-
   const [password, setPassword] = useState("");
-
   const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
@@ -130,7 +128,9 @@ export default function Login() {
 
             <p className="text-sm text-center">
               Não possui uma conta?{" "}
-              <Link to="/Signup" className="text-[#0f3cde]">
+              <Link to="/signup" className="text-[#0f3cde]">
+                {" "}
+                {/* Link path should match the route */}
                 Inscreva-se
               </Link>
             </p>
