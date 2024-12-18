@@ -343,7 +343,201 @@ class BlockHeaders:
             'VL_BC_COFINS', 'ALIQ_COFINS', 'VL_COFINS', 'INFO_COMPL'
         ],
         'I199': ['REG', 'NUM_PROC', 'IND_PROC'],
-        'I200': ['REG', 'NUM_CAMPO', 'COD_DET', 'DET_VALOR', 'COD_CTA', 'INFO_COMPL']            
+        'I200': ['REG', 'NUM_CAMPO', 'COD_DET', 'DET_VALOR', 'COD_CTA', 'INFO_COMPL'],            
+        'I299': ['REG', 'NUM_PROC', 'IND_PROC'],
+        'I300': ['REG', 'COD_COMP', 'DET_VALOR', 'COD_CTA', 'INFO_COMPL'],
+        'I399': ['REG', 'NUM_PROC', 'IND_PROC'],
+        'I990': ['REG', 'QTD_LIN_I'],
+        'M001': ['REG', 'IND_MOV'],
+        'M100': [
+            'REG', 'COD_CRED', 'IND_CRED_ORI', 'VL_BC_PIS', 'ALIQ_PIS', 
+            'QUANT_BC_PIS', 'ALIQ_PIS_QUANT', 'VL_CRED', 'VL_AJUS_ACRES', 
+            'VL_AJUS_REDUC', 'VL_CRED_DIF', 'VL_CRED_DISP', 'IND_DESC_CRED', 
+            'VL_CRED_DESC', 'SLD_CRED'
+        ],
+        'M105': [
+            'REG', 'NAT_BC_CRED', 'CST_PIS', 'VL_BC_PIS_TOT', 'VL_BC_PIS_CUM',
+            'VL_BC_PIS_NC', 'VL_BC_PIS', 'QUANT_BC_PIS_TOT', 'QUANT_BC_PIS', 
+            'DESC_CRED'
+        ],
+        'M110': ['REG', 'IND_AJ', 'VL_AJ', 'COD_AJ', 'NUM_DOC', 'DESCR_AJ', 'DT_REF'],
+        'M115': [
+            'REG', 'DET_VALOR_AJ', 'CST_PIS', 'DET_BC_CRED', 'DET_ALIQ', 
+            'DT_OPER_AJ', 'DESC_AJ', 'COD_CTA', 'INFO_COMPL'
+        ],
+        'M200': [
+            'REG', 'VL_TOT_CONT_NC_PER', 'VL_TOT_CRED_DESC', 'VL_TOT_CRED_DESC_ANT', 
+            'VL_TOT_CONT_NC_DEV', 'VL_RET_NC', 'VL_OUT_DED_NC', 'VL_CONT_NC_REC',
+            'VL_TOT_CONT_CUM_PER', 'VL_RET_CUM', 'VL_OUT_DED_CUM', 
+            'VL_CONT_CUM_REC', 'VL_TOT_CONT_REC'
+        ],
+        'M205': ['REG', 'NUM_CAMPO', 'COD_REC', 'VL_DEBITO'],
+        'M210': [
+            'REG', 'COD_CONT', 'VL_REC_BRT', 'VL_BC_CONT', 'ALIQ_PIS', 'QUANT_BC_PIS',
+            'ALIQ_PIS_QUANT', 'VL_CONT_APUR', 'VL_AJUS_ACRES', 'VL_AJUS_REDUC',
+            'VL_CONT_DIFER', 'VL_CONT_DIFER_ANT', 'VL_CONT_PER'
+        ],
+        'M211': [
+            'REG', 'IND_TIP_COOP', 'VL_BC_CONT_ANT_EXC_COOP', 'VL_EXC_COOP_GER', 
+            'VL_EXC_ESP_COOP', 'VL_BC_CONT'
+        ],
+        'M220': ['REG', 'IND_AJ', 'VL_AJ', 'COD_AJ', 'NUM_DOC', 'DESCR_AJ', 'DT_REF'],
+        'M225': [
+            'REG', 'DET_VALOR_AJ', 'CST_PIS', 'DET_BC_CRED', 'DET_ALIQ', 
+            'DT_OPER_AJ', 'DESC_AJ', 'COD_CTA', 'INFO_COMPL'
+        ],
+        'M230': [
+            'REG', 'CNPJ', 'VL_VEND', 'VL_NAO_RECEB', 'VL_CONT_DIF', 'VL_CRED_DIF', 
+            'COD_CRED'
+        ],
+        'M300': [
+            'REG', 'COD_CONT', 'VL_CONT_APUR_DIFER', 'NAT_CRED_DESC', 
+            'VL_CRED_DESC_DIFER', 'VL_CONT_DIFER_ANT', 'PER_APUR', 'DT_RECEB'
+        ],
+        'M350': [
+            'REG', 'VL_TOT_FOL', 'VL_EXC_BC', 'VL_TOT_BC', 'ALIQ_PIS_FOL', 
+            'VL_TOT_CONT_FOL'
+        ],
+        'M400': ['REG', 'CST_PIS', 'VL_TOT_REC', 'COD_CTA', 'DESC_COMPL'],
+        'M410': ['REG', 'NAT_REC', 'VL_REC', 'COD_CTA', 'DESC_COMPL'],
+        'M500': [
+            'REG', 'COD_CRED', 'IND_CRED_ORI', 'VL_BC_COFINS', 'ALIQ_COFINS', 
+            'QUANT_BC_COFINS', 'ALIQ_COFINS_QUANT', 'VL_CRED', 'VL_AJUS_ACRES',
+            'VL_AJUS_REDUC', 'VL_CRED_DIFER', 'VL_CRED_DISP', 'IND_DESC_CRED', 
+            'VL_CRED_DESC', 'SLD_CRED'
+        ],
+        'M505': [
+            'REG', 'NAT_BC_CRED', 'CST_COFINS', 'VL_BC_COFINS_TOT', 
+            'VL_BC_COFINS_CUM', 'VL_BC_COFINS_NC', 'VL_BC_COFINS',
+            'QUANT_BC_COFINS_TOT', 'QUANT_BC_COFINS', 'DESC_CRED'
+        ],
+        'M510': ['REG', 'IND_AJ', 'VL_AJ', 'COD_AJ', 'NUM_DOC', 'DESCR_AJ', 'DT_REF'],
+        'M515': [
+            'REG', 'DET_VALOR_AJ', 'CST_COFINS', 'DET_BC_CRED', 'DET_ALIQ', 
+            'DT_OPER_AJ', 'DESC_AJ', 'COD_CTA', 'INFO_COMPL'
+        ],
+        'M600': [
+            'REG', 'VL_TOT_CONT_NC_PER', 'VL_TOT_CRED_DESC', 'VL_TOT_CRED_DESC_ANT',
+            'VL_TOT_CONT_NC_DEV', 'VL_RET_NC', 'VL_OUT_DED_NC', 'VL_CONT_NC_REC',
+            'VL_TOT_CONT_CUM_PER', 'VL_RET_CUM', 'VL_OUT_DED_CUM',
+            'VL_CONT_CUM_REC', 'VL_TOT_CONT_REC'
+        ],
+        'M605': ['REG', 'NUM_CAMPO', 'COD_REC', 'VL_DEBITO'],
+        'M610': [
+            'REG', 'COD_CONT', 'VL_REC_BRT', 'VL_BC_CONT', 'ALIQ_COFINS', 
+            'QUANT_BC_COFINS', 'ALIQ_COFINS_QUANT', 'VL_CONT_APUR',
+            'VL_AJUS_ACRES', 'VL_AJUS_REDUC', 'VL_CONT_DIFER', 'VL_CONT_DIFER_ANT', 
+            'VL_CONT_PER'
+        ],
+        'M611': [
+            'REG', 'IND_TIP_COOP', 'VL_BC_CONT_ANT_EXC_COOP', 'VL_EXC_COOP_GER',
+            'VL_EXC_ESP_COOP', 'VL_BC_CONT'
+        ],
+        'M620': ['REG', 'IND_AJ', 'VL_AJ', 'COD_AJ', 'NUM_DOC', 'DESCR_AJ', 'DT_REF'],
+        'M625': [
+            'REG', 'DET_VALOR_AJ', 'CST_COFINS', 'DET_BC_CRED', 'DET_ALIQ', 
+            'DT_OPER_AJ', 'DESC_AJ', 'COD_CTA', 'INFO_COMPL'
+        ],
+        'M630': [
+            'REG', 'CNPJ', 'VL_VEND', 'VL_NAO_RECEB', 'VL_CONT_DIF', 
+            'VL_CRED_DIF', 'COD_CRED'
+        ],
+        'M700': [
+            'REG', 'COD_CONT', 'VL_CONT_APUR_DIFER', 'NAT_CRED_DESC', 
+            'VL_CRED_DESC_DIFER', 'VL_CONT_DIFER_ANT', 'PER_APUR', 'DT_RECEB'
+        ],
+        'M800': ['REG', 'CST_COFINS', 'VL_TOT_REC', 'COD_CTA', 'DESC_COMPL'],
+        'M810': ['REG', 'NAT_REC', 'VL_REC', 'COD_CTA', 'DESC_COMPL'],
+        'M990': ['REG', 'QTD_LIN_M'],
+        'P001': ['REG', 'IND_MOV'],
+        'P010': ['REG', 'CNPJ'],
+        'P100': [
+            'REG', 'DT_INI', 'DT_FIN', 'VL_REC_TOT_EST', 'COD_ATIV_ECON',
+            'VL_REC_ATIV_ESTAB', 'VL_EXC', 'VL_BC_CONT', 'ALIQ_CONT',
+            'VL_CONT_APU', 'COD_CTA', 'INFO_COMPL'
+        ],
+        'P110': ['REG', 'NUM_CAMPO', 'COD_DET', 'DET_VALOR', 'INF_COMPL'],
+        'P199': ['REG', 'NUM_PROC', 'IND_PROC'],
+        'P200': [
+            'REG', 'PER_REF', 'VL_TOT_CONT_APU', 'VL_TOT_AJ_REDUC', 
+            'VL_TOT_AJ_ACRES', 'VL_TOT_CONT_DEV', 'COD_REC'
+        ],
+        'P210': ['REG', 'IND_AJ', 'VL_AJ', 'COD_AJ', 'NUM_DOC', 'DESCR_AJ', 'DT_REF'],
+        'P990': ['REG', 'QTD_LIN_P'],
+        '1001': ['REG', 'IND_MOV'],
+        '1010': [
+            'REG', 'NUM_PROC', 'ID_SEC_JUD', 'ID_VARA', 'IND_NAT_ACAO', 
+            'DESC_DEC_JUD', 'DT_SENT_JUD'
+        ],
+        '1020': ['REG', 'NUM_PROC', 'IND_NAT_ACAO', 'DT_DEC_ADM'],
+        '1100': [
+            'REG', 'PER_APU_CRED', 'ORIG_CRED', 'CNPJ_SUC', 'COD_CRED',
+            'VL_CRED_APU', 'VL_CRED_EXT_APU', 'VL_TOT_CRED_APU',
+            'VL_CRED_DESC_PA_ANT', 'VL_CRED_PER_PA_ANT', 'VL_CRED_DCOMP_PA_ANT',
+            'SD_CRED_DISP_EFD', 'VL_CRED_DESC_EFD', 'VL_CRED_PER_EFD',
+            'VL_CRED_DCOMP_EFD', 'VL_CRED_TRANS', 'VL_CRED_OUT', 'SLD_CRED_FIM'
+        ],
+        '1101': [
+            'REG', 'COD_PART', 'COD_ITEM', 'COD_MOD', 'SER', 'SUB_SER', 'NUM_DOC',
+            'DT_OPER', 'CHV_NFE', 'VL_OPER', 'CFOP', 'NAT_BC_CRED', 'IND_ORIG_CRED',
+            'CST_PIS', 'VL_BC_PIS', 'ALIQ_PIS', 'VL_PIS', 'COD_CTA', 'COD_CCUS',
+            'DESC_COMPL', 'PER_ESCRIT', 'CNPJ'
+        ],
+        '1102': ['REG', 'VL_CRED_PIS_TRIB_MI', 'VL_CRED_PIS_NT_MI', 'VL_CRED_PIS_EXP'],
+        '1200': [
+            'REG', 'PER_APUR_ANT', 'NAT_CONT_REC', 'VL_CONT_APUR', 'VL_CRED_PIS_DESC',
+            'VL_CONT_DEV', 'VL_OUT_DED', 'VL_CONT_EXT', 'VL_MUL', 'VL_JUR', 'DT_RECOL'
+        ],
+        '1210': [
+            'REG', 'CNPJ', 'CST_PIS', 'COD_PART', 'DT_OPER', 'VL_OPER', 'VL_BC_PIS',
+            'ALIQ_PIS', 'VL_PIS', 'COD_CTA', 'DESC_COMPL'
+        ],
+        '1220': ['REG', 'PER_APU_CRED', 'ORIG_CRED', 'COD_CRED', 'VL_CRED'],
+        '1300': [
+            'REG', 'IND_NAT_RET', 'PR_REC_RET', 'VL_RET_APU', 'VL_RET_DED',
+            'VL_RET_PER', 'VL_RET_DCOMP', 'SLD_RET'
+        ],
+        '1500': [
+            'REG', 'PER_APU_CRED', 'ORIG_CRED', 'CNPJ_SUC', 'COD_CRED', 'VL_CRED_APU',
+            'VL_CRED_EXT_APU', 'VL_TOT_CRED_APU', 'VL_CRED_DESC_PA_ANT',
+            'VL_CRED_PER_PA_ANT', 'VL_CRED_DCOMP_PA_ANT', 'SD_CRED_DISP_EFD',
+            'VL_CRED_DESC_EFD', 'VL_CRED_PER_EFD', 'VL_CRED_DCOMP_EFD', 
+            'VL_CRED_TRANS', 'VL_CRED_OUT', 'SLD_CRED_FIM'
+        ],
+        '1501': [
+            'REG', 'COD_PART', 'COD_ITEM', 'COD_MOD', 'SER', 'SUB_SER', 'NUM_DOC',
+            'DT_OPER', 'CHV_NFE', 'VL_OPER', 'CFOP', 'NAT_BC_CRED', 'IND_ORIG_CRED',
+            'CST_COFINS', 'VL_BC_COFINS', 'ALIQ_COFINS', 'VL_COFINS', 'COD_CTA',
+            'COD_CCUS', 'DESC_COMPL', 'PER_ESCRIT', 'CNPJ'
+        ],
+        '1502': ['REG', 'VL_CRED_COFINS_TRIB_MI', 'VL_CRED_COFINS_NT_MI', 'VL_CRED_COFINS_EXP'],
+        '1600': [
+            'REG', 'PER_APUR_ANT', 'NAT_CONT_REC', 'VL_CONT_APUR', 'VL_CRED_COFINS_DESC',
+            'VL_CONT_DEV', 'VL_OUT_DED', 'VL_CONT_EXT', 'VL_MUL', 'VL_JUR', 'DT_RECOL'
+        ],
+        '1610': [
+            'REG', 'CNPJ', 'CST_COFINS', 'COD_PART', 'DT_OPER', 'VL_OPER', 'VL_BC_COFINS',
+            'ALIQ_COFINS', 'VL_COFINS', 'COD_CTA', 'DESC_COMPL'
+        ],
+        '1620': ['REG', 'PER_APU_CRED', 'ORIG_CRED', 'COD_CRED', 'VL_CRED'],
+        '1700': [
+            'REG', 'IND_NAT_RET', 'PR_REC_RET', 'VL_RET_APU', 'VL_RET_DED', 
+            'VL_RET_PER', 'VL_RET_DCOMP', 'SLD_RET'
+        ],
+        '1800': [
+            'REG', 'INC_IMOB', 'REC_RECEB_RET', 'REC_FIN_RET', 'BC_RET', 
+            'ALIQ_RET', 'VL_REC_UNI', 'DT_REC_UNI', 'COD_REC'
+        ],
+        '1809': ['REG', 'NUM_PROC', 'IND_PROC'],
+        '1900': [
+            'REG', 'CNPJ', 'COD_MOD', 'SER', 'SUB_SER', 'COD_SIT', 'VL_TOT_REC', 
+            'QUANT_DOC', 'CST_PIS', 'CST_COFINS', 'CFOP', 'INF_COMPL', 'COD_CTA'
+        ],
+        '1990': ['REG', 'QTD_LIN_1'],
+        '9001': ['REG', 'IND_MOV'],
+        '9900': ['REG', 'REG_BLC', 'QTD_REG_BLC'],
+        '9990': ['REG', 'QTD_LIN_9'],
+        '9999': ['REG', 'QTD_LIN'],
     }
 
     @classmethod
